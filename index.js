@@ -1,4 +1,5 @@
 "use strict";
+// A small HTTP server to run the show
 
 const Canvas = require("canvas");
 const fs = require("fs");

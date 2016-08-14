@@ -1,5 +1,4 @@
 "use strict";
-
 // This is a universal script that generates and paints game of life
 // generations on both the client and the server.
 
