@@ -1,0 +1,33 @@
+body {
+    color: #222;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    user-select: none;
+}
+
+main {
+    width: 500px;
+    margin: 60px auto;
+}
+
+canvas {
+    width: 500px;
+    height: 500px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #9d261d;
+    color: white;
+    border: none;
+
+    font-size: 20px;
+
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #7d060d;
+}
