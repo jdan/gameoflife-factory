@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "canvas": "^1.4.0",
+    "gifencoder": "^1.0.6"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
