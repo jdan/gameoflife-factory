@@ -3,10 +3,17 @@ const ctx = canvas.getContext("2d");
 
 const cellCount = 16;
 
-let grid = makeGrid(cellCount, cellCount, _ => Math.random() > 0.6);
+let grid = emptyGrid(16, 16);
 const painter = createPainter(grid, ctx);
 
-painter.drawGrid(0, canvas.width, canvas.height);
+function drawRandomGrid() {
+    grid = makeGrid(cellCount, cellCount, _ => Math.random() > 0.6);
+    painter.loadGrid(grid);
+    painter.drawGrid(0, canvas.width, canvas.height);
+}
+
+// Draw a random grid to start
+drawRandomGrid();
 
 canvas.addEventListener("click", (e) => {
     resetAnimation();
@@ -23,7 +30,9 @@ canvas.addEventListener("click", (e) => {
     painter.drawGrid(0, canvas.width, canvas.height);
 });
 
-document.getElementById("reset").addEventListener("click", (e) => {
+document.getElementById("random").addEventListener("click", drawRandomGrid);
+
+document.getElementById("clear").addEventListener("click", (e) => {
     resetAnimation();
     grid = emptyGrid(cellCount, cellCount);
     painter.loadGrid(grid);
@@ -37,6 +46,7 @@ function resetAnimation() {
     clearInterval(animation);
     animation = null;
     currentFrame = 0;
+    painter.drawGrid(0, canvas.width, canvas.height);
 }
 
 document.getElementById("animate").addEventListener("click", (e) => {
