@@ -6,7 +6,11 @@ const cellCount = 16;
 let grid = emptyGrid(16, 16);
 const painter = createPainter(grid, ctx);
 
+let animation = null;
+let currentFrame = 0;
+
 function drawRandomGrid() {
+    resetAnimation();
     grid = makeGrid(cellCount, cellCount, _ => Math.random() > 0.6);
     painter.loadGrid(grid);
     painter.drawGrid(0, canvas.width, canvas.height);
@@ -38,9 +42,6 @@ document.getElementById("clear").addEventListener("click", (e) => {
     painter.loadGrid(grid);
     painter.drawGrid(0, canvas.width, canvas.height);
 });
-
-let animation = null;
-let currentFrame = 0;
 
 function resetAnimation() {
     clearInterval(animation);
