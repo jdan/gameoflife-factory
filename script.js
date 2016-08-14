@@ -58,11 +58,15 @@ document.getElementById("animate").addEventListener("click", (e) => {
     animation = setInterval(() => {
         currentFrame++;
 
-        // TODO: Share this constant
-        if (currentFrame == 10) {
+        if (currentFrame == NUM_FRAMES) {
             resetAnimation();
         } else {
             painter.drawGrid(currentFrame, canvas.width, canvas.height);
         }
     }, 100);
+});
+
+document.getElementById("gif").addEventListener("click", (e) => {
+    const b64 = window.btoa(JSON.stringify(grid));
+    window.open("/gif/" + b64);
 });

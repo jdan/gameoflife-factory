@@ -1,8 +1,10 @@
+"use strict";
+
 // This is a universal script that generates and paints game of life
 // generations on both the client and the server.
 
 // gifpop supports 10 frame so we'll just run with that
-const NUM_FRAMES = 10;
+var NUM_FRAMES = 10;
 
 function emptyGrid(width, height) {
     return makeGrid(width, height, _ => 0);
@@ -95,13 +97,18 @@ function createPainter(grid, ctx) {
     loadGrid(grid);
 
     return {
+        // Expose the NUM_FRAMES constant
+        NUM_FRAMES: NUM_FRAMES,
+
         loadGrid: loadGrid,
 
         drawGrid: function(generation, width, height) {
             generation = generation || 0;
 
             // Clear the canvas
-            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = "rgb(255, 255, 255)";
+            ctx.fillRect(0, 0, width, height);
+            ctx.fillStyle = "rgb(0, 0, 0)";
 
             const grid = grids[generation];
             const cellsPerColumn = grid.length;
