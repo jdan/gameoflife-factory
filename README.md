@@ -16,7 +16,7 @@ npm start
 
 Use the UI to toggle cells, clear the whole thing, and check your animation. If you think it's rad, click the "GIF" button and see a GIF open in a new tab.
 
-![a screenshot of the UI in action](http://i.imgur.com/d0jiqWw.png)
+<img src="http://i.imgur.com/d0jiqWw.png" width="300">
 
 ### license
 
