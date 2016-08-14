@@ -1,6 +1,6 @@
 ## gameoflife-factory
 
-a small webapp to make game-of-life gifs
+a small webapp to make [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) gifs
 
 ### setup
 
